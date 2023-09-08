@@ -1,8 +1,8 @@
 ﻿namespace SimpleFactoryDP
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             ICard? card = CreditCardFactory.GetCreditCardDetails("myzone");
 
