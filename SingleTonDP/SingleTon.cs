@@ -12,6 +12,14 @@
         // For ensuring singleton in multi threading env.
         private static object lockObject = new object();
 
+        // Using eager loading, can pass this instance in property without double-check and it's tread
+        // Safe.
+        private static readonly object eagerInit = new SingleTon();
+
+        // Using lazy loading, can pass this instance as lazyInit.Value in property without double-check and it's tread
+        // Safe.
+        private static readonly Lazy<SingleTon> lazyInit = new Lazy<SingleTon>(() => new SingleTon());
+
         private SingleTon()
         {
             counter++;
@@ -28,7 +36,7 @@
             {
                 if (instance == null)
                 {
-                    // Making the threads to wait here using lazy initialization.
+                    // Use double-check locking to ensure thread safety while creating the instance.
                     lock (lockObject)
                     {
                         if (instance == null)
