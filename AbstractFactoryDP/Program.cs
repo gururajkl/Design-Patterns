@@ -2,7 +2,26 @@
 
 namespace AbstractFactoryDP
 {
-    internal class Program
+    /// <summary>
+    /// Abstract Factory Component in this example.
+    /// 
+    /// Abstract Product A: IBike.cs
+    /// Abstract Product B: ICar.cs
+    /// 
+    /// Product A1: RegularBike.cs
+    /// Product B1: RegularCar.cs
+    /// 
+    /// Product A2: SportsBike.cs
+    /// Product B2: SportsCar.cs
+    /// 
+    /// Abstract Factory: IVehicleFactory.cs
+    /// 
+    /// Concrete Factory1: RegularVehicleFactory.cs
+    /// Concrete Factory2: SportsVehicleFactory.cs
+    /// 
+    /// Clent: Program.cs
+    /// </summary>
+    public class Program
     {
         static void Main()
         {
